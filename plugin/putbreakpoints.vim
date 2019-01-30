@@ -44,7 +44,7 @@ function! s:PutBreakPoint() abort
     :put =l:break_point
     execute ("norm ==")
   else
-    echo 'no breakpoint found for file type ' . &ft
+    echo 'no breakpoint found for file type!'
   endif
 endfunction
 
