@@ -7,8 +7,12 @@ in the current project
 
 ### Ruby
 
-Inserts a `byebug` if Gemfile does not have any `pry` related gem, (`rb`, `rake`, `erb.html` files)
-Inserts a `(require 'pry'; binding.pry)` if Gemfile DO have any `pry` related gem, (`rb`, `rake`, `erb.html` files)
+Inserts a `byebug` if Gemfile does not have any `pry` related gem, (`rb`, `rake`, `html.erb` files)
+Inserts a `(require 'pry'; binding.pry)` if Gemfile DO have any `pry` related gem, (`rb`, `rake`, `html.erb` files)
+
+### Elixir
+
+Inserts a `require 'IEX; IE.pry` (`ex`, `exs`, `html.eex` files)
 
 ### Javascript
 

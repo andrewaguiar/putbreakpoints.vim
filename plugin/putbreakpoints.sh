@@ -9,6 +9,8 @@ RUBY_PRY="(require 'pry'; binding.pry)"
 RUBY_ERB_HTML_BYEBUG="<% byebug %>"
 RUBY_ERB_HTML_PRY="<% (require 'pry'; binding.pry) %>"
 JS="debugger"
+ELIXIR="require IEx; IEx.pry"
+ELIXIR_HTML_EEX="<% require IEx; IEx.pry %>"
 
 function rb_using_pry() {
   if [ ! -f "Gemfile" ]; then
@@ -45,7 +47,13 @@ case ${1,,} in
   *.rb|*.rake)
     ruby_bp;
   ;;
+  *.html.eex)
+    echo $ELIXIR_HTML_EEX;
+  ;;
+  *.ex|*.exs)
+    echo $ELIXIR;
+  ;;
   *.js|*.jsx)
-    echo $JS
+    echo $JS;
   ;;
 esac
