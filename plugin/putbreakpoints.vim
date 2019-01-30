@@ -22,7 +22,7 @@ function! s:BreakPointString() abort
   elseif (&ft == 'eelixir')
     return "<% require IEx; IEx.pry %>"
 
-  elseif (&ft == 'javascript.jxs')
+  elseif (&ft == 'javascript.jsx')
     return "debugger"
 
   elseif (&ft == 'ruby')
