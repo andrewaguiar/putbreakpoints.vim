@@ -1,12 +1,3 @@
-command! -bar -nargs=? PutBreakPoint
-      \ call s:PutBreakPoint() |
-
-function! s:PutBreakPoint() abort
-  let break_point = s:BreakPointString()
-  :put =break_point
-  execute ("norm ==")
-endfunction
-
 function! s:UsingPry() abort
   if (filereadable("Gemfile"))
     return system("cat Gemfile|grep pry-|wc -l") > 0
@@ -40,6 +31,15 @@ function! s:BreakPointString() abort
     endif
 
   endif
+endfunction
+
+command! -bar -nargs=? PutBreakPoint
+      \ call s:PutBreakPoint() |
+
+function! s:PutBreakPoint() abort
+  let break_point = s:BreakPointString()
+  :put =break_point
+  execute ("norm ==")
 endfunction
 
 map <Leader>p :PutBreakPoint()<CR>
