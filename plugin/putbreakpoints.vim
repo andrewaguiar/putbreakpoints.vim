@@ -43,6 +43,8 @@ function! s:PutBreakPoint() abort
   if l:break_point != ""
     :put =l:break_point
     execute ("norm ==")
+  else
+    echoerr 'no breakpoint found'
   endif
 endfunction
 
