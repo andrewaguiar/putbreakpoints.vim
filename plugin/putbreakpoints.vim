@@ -38,8 +38,10 @@ command! -bar -nargs=? PutBreakPoint
 
 function! s:PutBreakPoint() abort
   let break_point = s:BreakPointString()
-  :put =break_point
-  execute ("norm ==")
+  if (break_point != 0)
+    :put =break_point
+    execute ("norm ==")
+  endif
 endfunction
 
 map <Leader>p :PutBreakPoint()<CR>
