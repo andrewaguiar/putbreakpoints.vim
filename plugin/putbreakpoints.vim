@@ -29,7 +29,8 @@ function! s:BreakPointString() abort
     else
       return "<% byebug %>"
     endif
-
+  else
+    return ""
   endif
 endfunction
 
@@ -38,10 +39,8 @@ command! -bar -nargs=? PutBreakPoint
 
 function! s:PutBreakPoint() abort
   let break_point = s:BreakPointString()
-  if (break_point != 0)
-    :put =break_point
-    execute ("norm ==")
-  endif
+  :put =break_point
+  execute ("norm ==")
 endfunction
 
 map <Leader>p :PutBreakPoint()<CR>
