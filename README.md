@@ -1,7 +1,15 @@
 # PutBreakPoints
 
-Use `:PutBreakPoint` or `<Leader>p` to insert a breakpoint according the file type and some other particulars 
+Use `:PutBreakPoint` or `<Leader>p` to insert a breakpoint according the file type and some other particulars.
 in the current project
+
+## Installing
+
+```vim
+call plug#begin()
+Plug 'andrewaguiar/putbreakpoints.vim'
+call plug#end()
+```
 
 ## Languages
 
@@ -18,5 +26,3 @@ Inserts a `require 'IEX; IE.pry` (`ex`, `exs`, `html.eex` files)
 ### Javascript
 
 Inserts a `debugger` (`js`, `jsx` files)
-
-### Other comming soon!
